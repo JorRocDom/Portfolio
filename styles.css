@@ -1,0 +1,234 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Fuente más moderna */
+
+    color: #e0e0e0; /* Color de texto gris claro para contraste */
+    line-height: 1.6;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 40px;
+    text-align: center;
+    background-color: #333; /* Fondo oscuro gris */
+}
+
+.logo {
+    font-size: 50px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.navbar {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    background-color: #444; /* Fondo más oscuro en hover */
+    color: #fff;
+}
+
+.menu-btn {
+    cursor: pointer;
+    position: relative;
+    border: none;
+    background: none;
+    font-size: 18px;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 15px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-btn:focus,
+.menu-btn:hover {
+    background-color: #444;
+    color: #fff;
+}
+
+.menu-btn::after {
+    content: "";
+    pointer-events: none;
+    bottom: -2px;
+    left: 50%;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #999; /* Color sutil para la línea de enfoque */
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+}
+
+.menu-btn:hover::after,
+.menu-btn:focus::after {
+    width: 100%;
+    left: 0%;
+}
+
+.intro {
+    background: linear-gradient(135deg, rgb(68, 68, 68), rgb(39, 39, 39)); /* Degradado más oscuro */
+    padding: 80px 20px;
+    text-align: center;
+    margin-top: 120px;
+    border-bottom: 5px solid #444; /* Límite sutil entre las secciones */
+}
+
+.intro-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+
+.foto-perfil {
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 5px solid #444; /* Bordes más oscuros */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Sombra más profunda */
+    transition: transform 0.3s ease-out;
+}
+
+.foto-perfil:hover {
+    transform: scale(1.2); /* Efecto de agrandamiento al pasar el mouse */
+}
+
+.descripcion {
+    max-width: 700px;
+    margin-top: 20px;
+    color: #e0e0e0;
+}
+
+.descripcion h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.descripcion p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Secciones de conocimientos y proyectos */
+.conocimientos,
+.proyectos,
+.footer {
+    padding: 50px 20px;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #1a1a1a; /* Fondo oscuro gris para las secciones */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.proyectos {
+    margin-top: 50px;
+}
+
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #e0e0e0;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #e0e0e0;
+}
+
+/* Estilos para el footer */
+.footer {
+    background-color: #111; /* Fondo más oscuro para el footer */
+    color: #e0e0e0;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.footer h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.footer p {
+    font-size: 1.1rem;
+}
+
+/* Contenedor de iconos */
+.icons-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los iconos se ajusten a la siguiente línea si no caben */
+    justify-content: center; /* Centra los iconos horizontalmente */
+    gap: 20px; /* Aumenté el espacio entre los iconos para un look más aireado */
+    padding: 20px 0;
+}
+
+.icon {
+    width: 90px; 
+    height: 90px;
+    background-color: #444; /* Fondo gris oscuro */
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    font-size: 55px; /* Tamaño más grande para los iconos */
+    color: #e0e0e0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Sombra suave y sutil */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.icon:hover {
+    background-color: #555; /* Color más claro al pasar el mouse */
+    transform: scale(1.1); /* Efecto de agrandamiento al pasar el mouse */
+}
+
+.img-logo {
+    width: 65px;
+    height: 65px;
+}
